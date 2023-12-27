@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>web-rtc</title>
+</head>
+<body>
+    <h1>Hello WebRTC users</h1>
+    
+    <div>
+        <p id="offer"></p>
+        <div id="call-button" class="btn">Call User</div>
+        <button onclick="copyText('offer')">Copy SDP</button>
+    </div>
+    
+    <div>
+        <input title="Paste the offer SDP which you had recieved from someone calling you, if you are going to initiate a call then leave it as it is" id="incoming-sdp" placeholder="Offer SDP, Hover to know more"/>
+        <div id="incoming-button" class="btn">Incoming call</div>
+        <p id="answer"></p>
+    </div>
+    
+    <div>
+        <input title="Paste the answer SDP which you had recieved from someone you called, if you are the one recieving the call, then leave it as it is!" id="incoming-sdp" placeholder="Answer SDP, Hover to know more" id="accepted"/>
+        <div id="accepted-button" class="btn">Accepted call</div>
+    </div>
+    
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay muted></video>
+
+    <div id="chat">
+        <h1>Wohoo!! Connected</h1>
+        <p id="received-msg"></p>
+        <input id="send-msg"/>
+        <div onclick="handleSendMsg()" id="send-msg-btn" class="btn">Send Message</div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
